@@ -48,9 +48,11 @@
         // test our sql
         $insert_query=mysqli_query($conn,$insert_sql);
         if($insert_query){
-            $success=" successfull";
+            $sucess=" successfull";
+            // using php mailer send user a regsiteration mail
+            
             // direct user to login page
-            // header("loctaion:login.php");
+            header("loctaion:login.php");
         }
         else{
             $error="not successfull". mysqli_error($conn);

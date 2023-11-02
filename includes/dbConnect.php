@@ -11,7 +11,7 @@
 
 //   if $conn successful 
   if($conn==true) {
-    echo 'successfull';
+    // echo 'successfull';
   }
 // if connection nit successful exit the code. stop execution
   else{
