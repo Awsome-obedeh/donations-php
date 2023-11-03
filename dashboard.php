@@ -16,7 +16,7 @@ $success='';
     // chehck if form button is clicked
     if(isset($_POST['donate'])){
         // collect  form values
-        echo $amount=filter_var($_POST['amount'], FILTER_SANITIZE_NUMBER_INT);
+        echo $amount=filter_var($_POST['amount'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         // insert into the donate table
         $inser_sql="INSERT INTO donate (userId,amount) VALUES($id,$amount)";

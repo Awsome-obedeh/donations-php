@@ -1,4 +1,5 @@
 <?php
+
 // start a session 
 session_start();
 // import databse connect
@@ -10,7 +11,7 @@ $success='';
 if (isset($_POST['login'])) {
     // take form values and validate
     $email = filter_var($_POST['email']);
-    $password = filter_var($_POST['password']);
+    $password = filter_var($_POST['password'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     if (!$password || !$email) {
         $error = "provide login credentials";
     } else {
