@@ -7,6 +7,7 @@ include('includes/dbConnect.php');
 // define error variable to prevent showing an undefined variable message on the browser
 $error = '';
 $success='';
+
 // if the login button is clicked
 if (isset($_POST['login'])) {
     // take form values and validate
@@ -87,6 +88,16 @@ include('includes/navbar.php');
                 <!-- display error  -->
                 <strong>Well done! <?= $error ?> </strong>
             </div>
+        <?php endif ?>
+
+        <?php if ( isset($_SESSION['err'])) : ?>
+            <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <!-- display _SESION$_SESSION['err']  -->
+                <strong>Well done! <?= $_SESSION['err'] ?> </strong>
+            </div>
+            <!-- unset the session error so it woont show oon other pages -->
+          
         <?php endif ?>
 
 
